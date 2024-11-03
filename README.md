@@ -94,7 +94,3 @@ Para ejecutar un ejemplo de movimiento con `MoveIt` y el brazo Staubli TX90, sig
    ```
 
    Este script mueve el robot a través de varios puntos predefinidos, usando el controlador de `MoveIt`.
-
-## 6. Contribuciones y Contacto
-
-Si tienes mejoras o sugerencias, no dudes en contribuir mediante **pull requests**. Para dudas específicas, contacta a [juanantms](https://github.com/juanantms).
