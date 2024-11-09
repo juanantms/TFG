@@ -1,7 +1,7 @@
 controller_list:
-  - name: "joint_trajectory_action"
-    action_ns: "joint_trajectory_action"
-    type: "FollowJointTrajectory"
+  - name: joint_trajectory_action
+    action_ns: ""
+    type: FollowJointTrajectory
     joints:
       - joint_1
       - joint_2
@@ -9,3 +9,4 @@ controller_list:
       - joint_4
       - joint_5
       - joint_6
+    action_monitoring_timeout: 15.0
