@@ -13,8 +13,13 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <exec_depend>staubli_resources</exec_depend>
   <exec_depend>staubli_tx90_gazebo</exec_depend>
+  <exec_depend>staubli_tx90_moveit_config</exec_depend>
   <exec_depend>staubli_tx90_support</exec_depend>
+  <exec_depend>staubli_tx2_90_support</exec_depend>
+  <exec_depend>staubli_tx2_90_moveit_config</exec_depend>
+  <exec_depend>tx2_90_moveit_config</exec_depend>
 
   <export>
     <metapackage/>

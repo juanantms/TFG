@@ -16,11 +16,17 @@
 -->
 
   <!-- robot_ip: IP-address of the robot's socket-messaging server -->
-  <arg name="robot_ip" />
+  <arg name="robot_ip" default="127.0.0.1"/>
 
   <!-- copy the specified parameters to the Parameter Server, for
        use by nodes below -->
   <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+
+  <!-- Cargar el URDF del robot en el servidor de parámetros -->
+  <param name="robot_description" command="cat '$(find staubli_tx2_90_support)/urdf/tx2_90.urdf'" />
+
+  <!-- Nombres de las articulaciones -->
+  <rosparam param="controller_joint_names">['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']</rosparam>
 
   <!-- robot_state: publishes joint positions and robot-state data
        (from socket connection to robot)
@@ -40,5 +46,5 @@
        high-level robot control
   -->
   <node pkg="industrial_robot_client" type="joint_trajectory_action"
-    name="joint_trajectory_action" />
+    name="joint_trajectory_action" output="screen" />
 </launch>

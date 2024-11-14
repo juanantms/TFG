@@ -1,0 +1,21 @@
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+
+hardware_interface:
+  joints:
+    - joint_1
+    - joint_2
+    - joint_3
+    - joint_4
+    - joint_5
+    - joint_6
+  sim_control_mode: 0  # 0: posición, 1: velocidad
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+
+controller_list:
+  [joint_trajectory_action]
+
