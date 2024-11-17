@@ -1,20 +1,20 @@
 
-# Proyecto Staubli TX90 con ROS
+# TFG: Integración de Robot Manipulador en un Sistema Distribuido con ROS 
 
-Este repositorio contiene el código y la configuración necesarios para trabajar con el brazo robot Staubli TX90 utilizando ROS y el paquete `MoveIt`. Aquí aprenderás a configurar un workspace de ROS, a clonar este repositorio y a ejecutar un ejemplo.
+Este repositorio contiene el código y la configuración necesarios para trabajar con los brazos robóticos Staubli TX-90 y TX2-90 utilizando ROS y el paquete `MoveIt`. Aquí aprenderás a configurar un workspace de ROS, a clonar este repositorio y a ejecutar un ejemplo.
 
 ## Requisitos Previos
 
 - **ROS Melodic** instalado en tu sistema.
-- Familiaridad básica con ROS y el uso de `catkin_make`.
+- Familiaridad básica con ROS.
 
 ## 1. Creación del Workspace de ROS
 
 1. Abre una terminal y crea una carpeta para el workspace de ROS (usualmente llamada `catkin_ws` o similar):
 
    ```bash
-   mkdir -p ~/staubli_tx90_ws/src
-   cd ~/staubli_tx90_ws
+   mkdir -p ~/catkin_ws/src
+   cd ~/catkin_ws
    ```
 
 2. Inicializa el workspace usando `catkin_make`:
@@ -34,7 +34,7 @@ Este repositorio contiene el código y la configuración necesarios para trabaja
    Añade esta línea al archivo `~/.bashrc` para que se ejecute automáticamente cada vez que abras una terminal:
 
    ```bash
-   echo "source ~/staubli_tx90_ws/devel/setup.bash" >> ~/.bashrc
+   echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
    source ~/.bashrc
    ```
 
@@ -43,7 +43,7 @@ Este repositorio contiene el código y la configuración necesarios para trabaja
 Asegúrate de que estás en la carpeta `src` de tu workspace y luego clona este repositorio:
 
 ```bash
-cd ~/staubli_tx90_ws/src
+cd ~/catkin_ws/src
 git clone https://github.com/juanantms/TFG.git
 ```
 
@@ -53,15 +53,15 @@ Esto descargará el contenido de este repositorio en la carpeta `src`.
 
 Este repositorio contiene las siguientes carpetas principales dentro de `src`:
 
-- **staubli_experimental**: Contiene configuraciones experimentales y archivos de soporte para el brazo Staubli TX90 en ROS, incluyendo descripciones de robots y configuraciones de simulación.
-- **staubli_val3_driver**: Incluye el driver `staubli_val3_driver` para comunicarse con el controlador CS8 de Staubli, lo cual permite enviar comandos y recibir el estado del robot.
+- **staubli_experimental**: Contiene configuraciones experimentales y archivos de soporte para los brazos Staubli TX-90 y TX2-90 en ROS, incluyendo descripciones en URDF y Xacro, configuraciones de simulación en Gazebo y paquetes para la planificación de movimientos con MoveIt!.
+- **staubli_val3_driver**: Incluye el driver `staubli_val3_driver` para comunicarse con el controlador CS9 de Staubli, lo cual permite enviar comandos y recibir el estado del brazo robótico.
 
 ## 4. Compilar el Workspace
 
 Después de clonar el repositorio, regresa a la carpeta principal de tu workspace y ejecuta `catkin_make` para compilar todo el contenido:
 
 ```bash
-cd ~/staubli_tx90_ws
+cd ~/catkin_ws
 catkin_make
 ```
 
@@ -69,7 +69,7 @@ Si todo está correctamente configurado, la compilación debería finalizar sin 
 
 ## 5. Ejecutar un Ejemplo
 
-Para ejecutar un ejemplo de movimiento con `MoveIt` y el brazo Staubli TX90, sigue estos pasos:
+Para ejecutar un ejemplo de movimiento con `MoveIt` y el brazo Staubli TX-90, sigue estos pasos:
 
 1. Asegúrate de tener el entorno de ROS cargado:
 
@@ -77,7 +77,7 @@ Para ejecutar un ejemplo de movimiento con `MoveIt` y el brazo Staubli TX90, sig
    source devel/setup.bash
    ```
 
-2. Lanza el archivo de configuración de `MoveIt` para el brazo Staubli TX90:
+2. Lanza el archivo de configuración de `MoveIt` para el brazo Staubli TX-90:
 
    ```bash
    roslaunch staubli_tx90_moveit_config demo.launch
